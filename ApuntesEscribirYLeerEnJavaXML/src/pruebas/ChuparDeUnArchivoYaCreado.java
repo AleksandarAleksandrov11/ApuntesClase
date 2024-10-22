@@ -25,19 +25,25 @@ public class ChuparDeUnArchivoYaCreado {
 	        <autor>Alex</autor>
 	    </libro>
 	</libros>
-		*/
-	//DECLARO el file diciendo que sea un xml
+	*/
+		
+	//DECLARO el file diciendo que sea un xml.
+	/*
+ 	El DocumentBuilderFactory es una clase singleton que crea 1 solo objeto, que sirve para poder crear metodos
+  	de la misma clase DocumentBuilder que sirven para poder crear Documentos(obviamente).
+  	*/
 	DocumentBuilderFactory fnaf = DocumentBuilderFactory.newInstance();
+	//Y el DocumentBuilder lo que hace es crear Documentos(como he dicho antes).
 	DocumentBuilder constructor = fnaf.newDocumentBuilder();
-	//decalra el file para encontrar el archivo
+	//decalra el file para encontrar el archivo.
 	File file = new File("./src/barrin.xml");
-	//carga el objeto doc con un archivo xml
+	//carga el objeto doc con un archivo xml.
 	Document doc = constructor.parse(file);
 	/*
 	El método normalize() en un objeto Document se utiliza para combinar nodos de texto adyacentes y eliminar nodos vacíos.
 	Esto es especialmente útil cuando se ha manipulado el DOM (Document Object Model) o cuando se ha cargado un documento XML 
 	que puede contener espacios en blanco innecesarios o nodos vacíos.
-	Basicamente hace legible el codigo para java, nos ayuda mucho , basicamnete ponerlo siempre
+	Basicamente hace legible el codigo para java, nos ayuda mucho , basicamnete ponerlo siempre.
 	*/
 	doc.getDocumentElement().normalize();
 	
@@ -49,7 +55,7 @@ public class ChuparDeUnArchivoYaCreado {
 	*/
 	for (int i = 0; i < listaDeElemntosRaiz.getLength(); i++) {
 	// la de siempre, te creas un Element donde vas a guardar lo que chupes del xml, la razón es porque en el arhcivo xml se guardan Elements,
-		//tambien (se me habia olvidad decir) te los va a leer todos ya que lo recorre
+		//tambien (se me habia olvidad decir) te los va a leer todos ya que lo recorre.
 		Element libroPapi = (Element) listaDeElemntosRaiz.item(i);
 		/*
 		El getElementsByTagName() devuelve un Nodelist(ListaDeNodos)con todos los nodos dentro que tengan la etiqueta titulo.
@@ -60,7 +66,7 @@ public class ChuparDeUnArchivoYaCreado {
 		String autorHijo = libroPapi.getElementsByTagName("autor").item(0).getTextContent();
 		/*
 		 -------------------------------------------------------------------------------- 
-		  									IMPORTANTE
+		  				   IMPORTANTE
 		 --------------------------------------------------------------------------------
 		 Para sacar cualqier dato de un hijo se tiene que tener el padre siempre,por ejemplo el titulo no lo hemos declarado como Element
 		 para sacar el texto del titulo porque ya tenemos el padre(libroPapi), comom queremos sacar el id necesitamos tener el padre del id,
