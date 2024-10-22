@@ -32,8 +32,17 @@ public class MeterEnUnArchivo {
 		 */
 		
 		//DECLARO el docuemnto, y le digo que se riga por DOM
+		
+		//El DocumentBuilderFactory es un objeto singleton que te permite crear objetos Hijos de la clase DocumentBuilder
 		DocumentBuilderFactory fnaf = DocumentBuilderFactory.newInstance();
+		//El DocumentBuilder es un objeto que crea Documentos
 		DocumentBuilder constructor = fnaf.newDocumentBuilder();
+		//Y como he dicho antes el DOMImplementation, implementa el DOM
+		/*
+		El DOM (Document Object Model) es una interfaz de programación que representa y permite interactuar con documentos HTML y XML. 
+		Proporciona una estructura jerárquica que permite a los desarrolladores manipular el contenido,
+  		la estructura y el estilo de un documento de forma dinámica. Aquí hay una descripción más detallada:
+  		*/
 		DOMImplementation implement = constructor.getDOMImplementation();
 		//le decimos que sea de tipo xml
 		/*
