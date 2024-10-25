@@ -30,7 +30,7 @@ public class Main {
         La variable se inicializa con el resultado de ToolProvider.getSystemJavaCompiler(), 
         lo que significa que compiler ahora contiene una referencia al compilador de Java.
         //////////////////////////////////////////////////////////////////////////////////
-        									RESUMEN
+        					RESUMEN
         //////////////////////////////////////////////////////////////////////////////////
         La línea completa crea una variable llamada compiler que contiene una instancia del compilador de Java chupando
         a través de ToolProvider. 
