@@ -1,3 +1,5 @@
-# HOLA
-Estoy viendo si así me muestra como colaborador.
-(Esto es markdown btw)
+# BIENVENIDO AL REPOSITORIO DE TAREAS, ESTUDIOS Y BARRO
+Sube mierdas pa que tus compañeros lo vean.
+# NORMAS
+
+ 
