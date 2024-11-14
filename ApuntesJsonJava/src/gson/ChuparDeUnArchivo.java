@@ -75,7 +75,7 @@ public class ChuparDeUnArchivo {
 			/*
 			---------------------------------------------------------------------------------- 
 			  
-			 									IMPORTANTE
+			 				    IMPORTANTE
 			 
 			----------------------------------------------------------------------------------
 			La estructura con la que se trabaja en gson es con el JsonObject.
