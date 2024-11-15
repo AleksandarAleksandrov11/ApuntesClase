@@ -12,7 +12,7 @@ import java.io.IOException;
 public class ChuparDeUnArchivo {		
 	/*
 	  {
-  		"nombre": "Inludify",
+  		"nombre": "Includify",
   		"fundado": 2021,
   		"equipo": [
     		{
@@ -35,7 +35,7 @@ public class ChuparDeUnArchivo {
     	"cadenas": ["uno", "dos", "tres"],
     	"mixto": [1, "dos", true, null],
     	"anidado": {
-      		"nivel1": {
+      		"nivel1": { 
         		"nivel2": {
           			"clave": "valor"
         		}
@@ -55,7 +55,7 @@ public class ChuparDeUnArchivo {
 		try (FileReader reader = new FileReader("ejemplo.json")) {
 			 /*
 			 JsonObject es una clase en la biblioteca Gson que representa un objeto JSON en Java, lo que nos sirve para poder manejar
-			 los objetos como calve valor.
+			 los objetos como clave valor.
 			 
 			 JsonParser es una clase de Gson que permite parsear
 			 texto en formato JSON a objetos de Gson (como JsonObject, JsonArray, etc.).
@@ -67,7 +67,7 @@ public class ChuparDeUnArchivo {
 			 getAsJsonObject(): Convierte el resultado de parseReader(reader), que inicialmente es un JsonElement, en un JsonObject,
 			 como he dicho antes, el parseReader() te devuelve un  tipo geneerico, este metodo lo que hace es declararlo como objeto de Json.
 			 
-			 de tal modo que haciendo esta linea conseguimos poder interpretar cada elemento de un json como un jasonobject que luego vamos
+			 de tal modo que haciendo esta linea conseguimos poder interpretar cada elemento de un json como un jsonobject que luego vamos
 			 a poder manipular.
 			 */					
 			JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
@@ -75,7 +75,7 @@ public class ChuparDeUnArchivo {
 			/*
 			---------------------------------------------------------------------------------- 
 			  
-			 				    IMPORTANTE
+			 				    			   IMPORTANTE
 			 
 			----------------------------------------------------------------------------------
 			La estructura con la que se trabaja en gson es con el JsonObject.
@@ -88,7 +88,7 @@ public class ChuparDeUnArchivo {
 			###################
 			# getAss ( ͡° ͜ʖ ͡°) #
 			###################
-			el metodo getAss aclara de que manera vamos a quere interpretar ese tipo de dato, y esto se hace
+			el metodo getAss aclara de que manera vamos a querer interpretar ese tipo de dato, y esto se hace
 			con todos los tipos de variables primitivas y con Objetos en este caso si lo queremos como String
 			se pone getAsString() como aqui:
 			*/
@@ -124,7 +124,7 @@ public class ChuparDeUnArchivo {
 			
 			/*
 			Lo mas importante de un array de json, es que cada elemento del array no es un JsonObject(que es con lo que hemos
-			estado trabajando hasta ahora), sino que es un JsonElement, que como explique antes es un objectom json generico,s	  
+			estado trabajando hasta ahora), sino que es un JsonElement, que como explique antes es un objecto json generico  
 			*/
 			for (JsonElement miembro : equipo) {
 				
@@ -173,6 +173,7 @@ public class ChuparDeUnArchivo {
 			JsonArray mixto = datos.getAsJsonArray("mixto");
 			System.out.print("Mixto: ");
 			for (JsonElement elemento : mixto) {
+				//el metodo isJsonPrimitive() te devuelve true si la variable es primitiva, si
 				if (elemento.isJsonPrimitive()) {
 					if (elemento.getAsJsonPrimitive().isBoolean()) {
 						System.out.print(elemento.getAsBoolean() + " ");
